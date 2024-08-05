@@ -1,0 +1,53 @@
+.chemicalButton {
+  width: 7%;
+  padding: 0;
+  border: 1px solid RGB(87, 177, 255);
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  transition: all 0.2s;
+  background: RGB(87, 177, 255);
+  box-shadow: 0px 5px 0px 0px RGB(56, 113, 163);
+  mar
+}
+
+.chemicalButton:hover {
+  box-shadow: 0px 0px 0px 0px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.equipmentButton {
+  width: 7%;
+  padding: 0;
+  border: 1px solid RGB(170, 230, 0);
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  transition: all 0.2s;
+  background: RGB(170, 230, 0);
+  box-shadow: 0px 5px 0px 0px RGB(115, 156, 0);
+}
+
+.equipmentButton:hover {
+  box-shadow: 0px 0px 0px 0px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+.MainLogo {
+  width: 45%;
+
+  padding: 0;
+}
+
+.Buttons {
+  display: flex;
+  flex-direction: row;
+}
