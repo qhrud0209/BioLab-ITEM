@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import styles from "./Main.module.css";
 
-import MainLogo from "../../assets/image/BioTEM_logo.png";
+import MainLogo from "../../components/MainLogo";
 
 function Main() {
   const [message, setMessage] = useState("");
@@ -21,12 +21,12 @@ function Main() {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className={styles.Block}>
       <div className={styles.MainLogo}>
-        <img src={MainLogo} />
+        <MainLogo className={styles.LogoIMG} />
       </div>
       <div>
-        <p>{message}</p>
+        <p className={styles.message}>{message}</p>
       </div>
 
       <div>
@@ -35,15 +35,13 @@ function Main() {
             className={styles.chemicalButton}
             onClick={() => navigate("/chemicals")}
           >
-            약품
+            CHEMICALS
           </button>
-        </div>
-        <div>
           <button
             className={styles.equipmentButton}
             onClick={() => navigate("/equipments")}
           >
-            기구
+            EQUIPMENTS
           </button>
         </div>
       </div>

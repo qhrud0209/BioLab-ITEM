@@ -13,7 +13,7 @@ function Chemical({ cid, chemicalName, chemicalLocation, chemicalQuantity }) {
       }}
     >
       <p>
-        {chemicalName} {chemicalLocation} {chemicalQuantity}
+        {chemicalName} /{chemicalLocation} /{chemicalQuantity}
       </p>
     </div>
   );

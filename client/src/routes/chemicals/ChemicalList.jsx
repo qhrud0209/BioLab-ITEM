@@ -8,17 +8,9 @@ import ChemicalSearchBar from "../../components/chemicals/ChemicalSearchBar";
 function ChemicalList() {
   const navigate = useNavigate();
 
-  const [searchterm, setSearchterm] = useState("");
-
-  const onKeySearch = (e) => {
-    if (e.key === "Enter") {
-      navigate(`/chemicals/list/${searchterm}`);
-    }
-  };
   const { searchTerm } = useParams();
 
   const [chemicals, setChemicals] = useState([]);
-  const [array, setArray] = useState([]);
 
   useEffect(() => {
     (async () => {

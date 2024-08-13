@@ -1,17 +1,22 @@
 .chemicalButton {
-  width: 7%;
+  display: block;
+  position: relative;
+  float: left;
+
+  width: 18vw;
+  top: 20vh;
   padding: 0;
   border: 1px solid RGB(87, 177, 255);
   margin: 10px 20px 10px 0;
   font-weight: 600;
+  font-size: 1.3em;
   text-align: center;
-  line-height: 50px;
+  line-height: 4;
   color: #fff;
   border-radius: 10px;
   transition: all 0.2s;
   background: RGB(87, 177, 255);
   box-shadow: 0px 5px 0px 0px RGB(56, 113, 163);
-  mar
 }
 
 .chemicalButton:hover {
@@ -21,13 +26,19 @@
 }
 
 .equipmentButton {
-  width: 7%;
+  display: block;
+  position: relative;
+  float: left;
+
+  width: 18vw;
+  top: 20vh;
   padding: 0;
   border: 1px solid RGB(170, 230, 0);
   margin: 10px 20px 10px 0;
   font-weight: 600;
+  font-size: 1.3rem;
   text-align: center;
-  line-height: 50px;
+  line-height: 4;
   color: #fff;
   border-radius: 10px;
   transition: all 0.2s;
@@ -42,12 +53,31 @@
 }
 
 .MainLogo {
-  width: 45%;
-
+  display: block;
+  position: relative;
+  float: left;
+  top: 10vh;
+  margin: 0;
   padding: 0;
 }
+.LogoIMG {
+  width: 45%;
+}
 
-.Buttons {
+.message {
+  position: relative;
+  top: 20vh;
+  text-align: center;
+
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: red;
+}
+
+.Block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }

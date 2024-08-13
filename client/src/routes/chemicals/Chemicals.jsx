@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MainLogo from "../../assets/image/BioTEM_logo.png";
+import ChemicalSearchBar from "../../components/chemicals/ChemicalSearchBar";
 
 function Chemicals() {
   const navigate = useNavigate();
@@ -22,19 +23,9 @@ function Chemicals() {
   }, []);
   return (
     <div>
-      <img onClick={() => navigate("/")} src={MainLogo} />
       <h1>약품</h1>
       <p>{message}</p>
-      <input
-        type="text"
-        placeholder="약품명을 입력하세요."
-        name="search"
-        onChange={(e) => setSearchterm(e.target.value)}
-        onKeyDown={onKeySearch}
-      />
-      <button onClick={() => navigate(`/chemicals/list/${searchterm}`)}>
-        검색
-      </button>
+      <ChemicalSearchBar />
       <button onClick={() => navigate("/chemicals/all")}>
         <p>전체목록확인</p>
       </button>

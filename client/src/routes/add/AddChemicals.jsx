@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import ImageData from "../../assets/image/replaceIMG.png";
 
+import MainLogo from "../../components/MainLogo";
+
 function AddChemicals() {
   const [chemicalName, setChemicalName] = useState("");
   const [chmicalLocation, setChemicalLocation] = useState("");
@@ -72,6 +74,7 @@ function AddChemicals() {
 
   return (
     <div>
+      <MainLogo />
       <h1>Add Chemicals</h1>
       <input
         type="text"

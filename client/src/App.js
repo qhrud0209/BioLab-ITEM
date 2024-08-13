@@ -10,6 +10,10 @@ import AllChemicals from "./routes/chemicals/AllChemicals.jsx";
 import AddNotice from "./routes/add/AddNotice.jsx";
 import ChemicalList from "./routes/chemicals/ChemicalList.jsx";
 import ChemicalDetail from "./routes/chemicals/ChemicalDetail.jsx";
+import EquipmentList from "./routes/equipments/EquipmentList.jsx";
+import EquipmentDetail from "./routes/equipments/EquipmentDetail.jsx";
+
+import FileTest from "./routes/file/FileTest.jsx";
 
 function App() {
   <Route path="/" element={<Main />} />;
@@ -26,6 +30,14 @@ function App() {
 
         <Route path="/chemicals/list/:searchTerm" element={<ChemicalList />} />
         <Route path="/chemicals/detail/:cid" element={<ChemicalDetail />} />
+
+        <Route
+          path="/equipments/list/:searchTerm"
+          element={<EquipmentList />}
+        />
+        <Route path="/equipments/detail/:eid" element={<EquipmentDetail />} />
+
+        <Route path="/file" element={<FileTest />} />
       </Routes>
     </Router>
   );

@@ -1,0 +1,20 @@
+.Mainlogo {
+  display: block;
+  width: 20%;
+  margin: auto;
+  justify-content: center;
+}
+.SearchBar {
+  width: 40%;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #000;
+  display: block;
+  justify-content: space-between;
+}
+
+.bigBox {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import MainLogo from "../../components/MainLogo";
 
 function AddNotice() {
   const [notice, setNotice] = useState("");
@@ -21,6 +22,7 @@ function AddNotice() {
   };
   return (
     <div>
+      <MainLogo />
       <h1>공지사항 작성</h1>
       <input
         type="text"
