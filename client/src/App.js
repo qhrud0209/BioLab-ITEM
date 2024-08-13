@@ -13,8 +13,6 @@ import ChemicalDetail from "./routes/chemicals/ChemicalDetail.jsx";
 import EquipmentList from "./routes/equipments/EquipmentList.jsx";
 import EquipmentDetail from "./routes/equipments/EquipmentDetail.jsx";
 
-import FileTest from "./routes/file/FileTest.jsx";
-
 function App() {
   <Route path="/" element={<Main />} />;
   return (
@@ -36,8 +34,6 @@ function App() {
           element={<EquipmentList />}
         />
         <Route path="/equipments/detail/:eid" element={<EquipmentDetail />} />
-
-        <Route path="/file" element={<FileTest />} />
       </Routes>
     </Router>
   );
