@@ -62,13 +62,15 @@ function AddChemicals() {
     console.log(data.message);
     if (data.message == "success") {
       alert("약품이 추가되었습니다.");
-
+      window.location.reload();
+      /*
       setChemicalName("");
       setChemicalLocation("");
       setChemicalCaution("");
       setChemicalImage(ImageData);
       setChemicalDate("");
       setChemicalQuantity();
+      */
     }
   };
 

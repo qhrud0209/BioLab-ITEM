@@ -28,7 +28,7 @@ function ChemicalDetail() {
       setChemicalName(data[0][1]);
       setChemicalLocation(data[0][2]);
       setChemicalCaution(data[0][3]);
-      setChemicalImage(data[0][4]);
+      setChemicalImage(btoa(data[0][4]));
       setChemicalDate(data[0][5]);
       setChemicalQuantity(data[0][6]);
 
@@ -53,7 +53,7 @@ function ChemicalDetail() {
       <p>{chemicalCaution}</p>
       <p>{chemicalDate}</p>
       <p>{chemicalQuantity}</p>
-      <img src={chemicalImage} alt="chemical" />
+      <img src={`data:image/png;base64,${chemicalImage}`} alt="chemical" />
     </div>
   );
 }

@@ -13,6 +13,7 @@ function Equipment({
         navigate(`/equipments/detail/${eid}`, {
           state: {
             eid: eid,
+            name: equipmentName,
           },
         });
       }}

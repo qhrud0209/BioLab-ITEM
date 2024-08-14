@@ -32,9 +32,12 @@ def equipment_search(keyword):
     #print(result)
     return result
 
-@app.route("/search/file/<path:filename>", methods=['GET'])
-def seatch_file(filename):
-    path = "../server/file-server"+filename+".pdf"
+@app.route("/search/file/<filename>", methods=['GET'])
+def search_file(filename):
+    path = "../server/file-server/"+filename+".pdf"
+
+    print(path)
+    print(os.path.isfile(path))
 
     if os.path.isfile(path):
         return jsonify({"message" : "yes"})
@@ -114,7 +117,7 @@ def add_notice():
     data = request.get_json()
 
     print(data)
-
+    cursor.execute('''DELETE FROM notice''')
     cursor.execute('''INSERT INTO notice(message) VALUES(?)''', (data['message'],))
     data = cursor.fetchall()
 
