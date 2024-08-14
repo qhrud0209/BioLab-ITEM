@@ -19,6 +19,8 @@ function EquipmentDetail() {
   const [equipmentFunction, setEquipmentFunction] = useState("");
   const [equipmentImage, setEquipmentImage] = useState();
 
+  const [isfile, setIsFile] = useState(false);
+
   useEffect(() => {
     (async () => {
       const res = await fetch(`/equipments/${eid}`);
@@ -36,6 +38,13 @@ function EquipmentDetail() {
         equipmentFunction,
         equipmentImage
       );
+
+      const res2 = await fetch("/search/file" + equipmentName);
+      const data2 = res2.json();
+
+      if (data2.message == "yes") {
+        setIsFile(true);
+      }
     })();
   }, []);
 
@@ -69,8 +78,11 @@ function EquipmentDetail() {
       <p>{equipmentLocation}</p>
       <p>{equipmentFunction}</p>
       <img src={`data:image/png;base64,${equipmentImage}`} alt="chemical" />
-
-      <img src={FileImage} onClick={onClickFile} alt="file" />
+      <div>
+        {isfile ? (
+          <img src={FileImage} onClick={onClickFile} alt="file" />
+        ) : null}
+      </div>
     </div>
   );
 }

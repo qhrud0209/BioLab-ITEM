@@ -29,21 +29,19 @@ function AddEquipment() {
 
   const onAddEquipment = () => {
     (async () => {
-      const formData = new FormData();
-      formData.append("files", equipmentFile);
-
-      console.log(formData);
-      console.log(Array.from(formData));
-
-      const ret = await fetch("/upload/file/" + equipmentName, {
-        method: "POST",
-        body: formData,
-      });
-
-      const response = await ret.json();
-      console.log(response);
-
-      if (response.message == "success") {
+      if (!equipmentName) {
+        alert("기구명을 입력해주세요.");
+        return;
+      }
+      if (!equipmentLocation) {
+        alert("기구위치를 입력해주세요.");
+        return;
+      }
+      if (!equipmentFunction) {
+        alert("기능을 입력해주세요.");
+        return;
+      }
+      if (!equipmentFile) {
         const res = await fetch("/add/equipment", {
           method: "POST",
           headers: {
@@ -73,7 +71,52 @@ function AddEquipment() {
           */
         }
       } else {
-        alert("기구 추가에 실패했습니다.");
+        const formData = new FormData();
+        formData.append("files", equipmentFile);
+
+        console.log(formData);
+        console.log(Array.from(formData));
+
+        const ret = await fetch("/upload/file/" + equipmentName, {
+          method: "POST",
+          body: formData,
+        });
+
+        const response = await ret.json();
+        console.log(response);
+
+        if (response.message == "success") {
+          const res = await fetch("/add/equipment", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: equipmentName,
+              location: equipmentLocation,
+              function: equipmentFunction,
+              image: equipmentImage,
+            }),
+          });
+
+          console.log(res);
+          const data = await res.json();
+          console.log(data);
+          console.log(data.message);
+          if (data.message == "success") {
+            alert("기구이 추가되었습니다.");
+            window.location.reload();
+            /*
+            setEquipmentName("");
+            setEquipmentLocation("");
+            setEquipmentFunction("");
+            setEquipmentImage(ImageData);
+            setEquipmentFile(null);
+            */
+          }
+        } else {
+          alert("기구 추가에 실패했습니다.");
+        }
       }
     })();
   };

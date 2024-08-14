@@ -32,6 +32,15 @@ def equipment_search(keyword):
     #print(result)
     return result
 
+@app.route("/search/file/<path:filename>", methods=['GET'])
+def seatch_file(filename):
+    path = "../server/file-server"+filename+".pdf"
+
+    if os.path.isfile(path):
+        return jsonify({"message" : "yes"})
+    else:
+        return jsonify({"message" : "no"})
+
 @app.route("/upload/file/<path:filename>", methods=['POST'])
 def upload_file(filename):
     
