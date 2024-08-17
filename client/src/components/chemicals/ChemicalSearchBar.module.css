@@ -1,11 +1,8 @@
-.Mainlogo {
-  display: block;
-  width: 20%;
-  margin: auto;
-  justify-content: center;
-}
-.SearchBar {
+.mainlogo {
   width: 40%;
+}
+.searchbar {
+  width: 100%;
   margin: 0 auto;
   padding: 10px;
   border-radius: 10px;
@@ -17,4 +14,21 @@
 .bigBox {
   display: flex;
   flex-direction: column;
+}
+
+.search {
+  position: relative;
+  right: 2.6vw;
+  top: 0.8vh;
+  width: 7%;
+}
+
+.block {
+  display: flex;
+  flex-direction: row;
+}
+.serachbarblock {
+  height: 20%;
+  display: flex;
+  flex-direction: row;
 }

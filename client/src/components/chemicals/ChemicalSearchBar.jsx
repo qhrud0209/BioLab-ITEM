@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import logo from "../../assets/image/BioTEM_logo.png";
 import styles from "./ChemicalSearchBar.module.css";
-import MainLogo from "../../components/MainLogo";
+import search from "../../assets/image/search.png";
 function ChemicalSearchBar() {
   const navigate = useNavigate();
 
@@ -15,25 +15,29 @@ function ChemicalSearchBar() {
   };
 
   return (
-    <div className={styles.bigBox}>
-      <div>
-        <MainLogo className={styles.MainLogo} />
-      </div>
-      <div className={styles.SearchBarBox}>
+    <div className={styles.block}>
+      <img
+        onClick={() => navigate("/")}
+        className={styles.mainlogo}
+        src={logo}
+      />
+
+      <div className={styles.serachbarblock}>
+        <input
+          className={styles.searchbar}
+          type="text"
+          placeholder="약품명을 입력하세요."
+          name="search"
+          onChange={(e) => setSearchterm(e.target.value)}
+          onKeyDown={onKeySearch}
+        />
+
         <div>
-          <input
-            className={styles.SearchBar}
-            type="text"
-            placeholder="약품명을 입력하세요."
-            name="search"
-            onChange={(e) => setSearchterm(e.target.value)}
-            onKeyDown={onKeySearch}
-          />
-        </div>
-        <div>
-          <button onClick={() => navigate(`/chemicals/list/${searchterm}`)}>
-            검색
-          </button>
+          <img
+            onClick={() => navigate(`/chemicals/list/${searchterm}`)}
+            src={search}
+            className={styles.search}
+          />{" "}
         </div>
       </div>
     </div>

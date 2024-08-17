@@ -22,28 +22,24 @@ function Main() {
 
   return (
     <div className={styles.Block}>
-      <div className={styles.MainLogo}>
-        <MainLogo className={styles.LogoIMG} />
+      <div className={styles.Title}>
+        <MainLogo classname={styles.LogoIMG} />
       </div>
-      <div>
-        <p className={styles.message}>{message}</p>
-      </div>
+      <p className={styles.message}>{message}</p>
 
-      <div>
-        <div className={styles.Buttons}>
-          <button
-            className={styles.chemicalButton}
-            onClick={() => navigate("/chemicals")}
-          >
-            CHEMICALS
-          </button>
-          <button
-            className={styles.equipmentButton}
-            onClick={() => navigate("/equipments")}
-          >
-            EQUIPMENTS
-          </button>
-        </div>
+      <div className={styles.Buttons}>
+        <button
+          className={styles.chemicalButton}
+          onClick={() => navigate("/chemicals")}
+        >
+          CHEMICALS
+        </button>
+        <button
+          className={styles.equipmentButton}
+          onClick={() => navigate("/equipments")}
+        >
+          EQUIPMENTS
+        </button>
       </div>
     </div>
   );

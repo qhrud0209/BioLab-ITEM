@@ -2,13 +2,20 @@ import { useEffect, useParams } from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import ChemicalSearchBar from "../../components/chemicals/ChemicalSearchBar";
+import image1 from "../../assets/image/chemical-1.jpg";
+import image2 from "../../assets/image/chemical-2.jpg";
+import xMark from "../../assets/image/x-mark.png";
+import Modal from "react-modal";
 function ChemicalDetail() {
   const location = useLocation();
 
   console.log(location.state.cid);
 
   const cid = location.state.cid;
+
+  const [modalShow, setModalShow] = useState(false);
 
   const [chemicalName, setChemicalName] = useState("");
   const [chemicalLocation, setChemicalLocation] = useState("");
@@ -54,6 +61,18 @@ function ChemicalDetail() {
       <p>{chemicalDate}</p>
       <p>{chemicalQuantity}</p>
       <img src={`data:image/png;base64,${chemicalImage}`} alt="chemical" />
+
+      <button onClick={() => setModalShow(true)}>
+        <p>위치확인</p>
+      </button>
+
+      <Modal isOpen={modalShow} onRequestClose={() => setModalShow(false)}>
+        <button onClick={() => setModalShow(false)}>
+          <img src={xMark} />
+        </button>
+        <img src={image1} />
+        <img src={image2} />
+      </Modal>
     </div>
   );
 }

@@ -5,10 +5,13 @@ import ImageData from "../../assets/image/replaceIMG.png";
 import MainLogo from "../../components/MainLogo";
 
 function AddEquipment() {
+  var temp = ImageData.split(",")[1];
+  var imageData = atob(temp);
+
   const [equipmentName, setEquipmentName] = useState("");
   const [equipmentLocation, setEquipmentLocation] = useState("");
   const [equipmentFunction, setEquipmentFunction] = useState("");
-  const [equipmentImage, setEquipmentImage] = useState(ImageData);
+  const [equipmentImage, setEquipmentImage] = useState(imageData);
   const [equipmentFile, setEquipmentFile] = useState(null);
 
   const onChangeImage = (e) => {

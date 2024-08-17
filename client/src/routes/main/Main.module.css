@@ -1,8 +1,4 @@
 .chemicalButton {
-  display: block;
-  position: relative;
-  float: left;
-
   width: 18vw;
   top: 20vh;
   padding: 0;
@@ -26,10 +22,6 @@
 }
 
 .equipmentButton {
-  display: block;
-  position: relative;
-  float: left;
-
   width: 18vw;
   top: 20vh;
   padding: 0;
@@ -52,32 +44,40 @@
   margin-bottom: 5px;
 }
 
-.MainLogo {
-  display: block;
-  position: relative;
-  float: left;
-  top: 10vh;
-  margin: 0;
-  padding: 0;
-}
 .LogoIMG {
-  width: 45%;
+  width: 40%;
+}
+
+.Title {
+  position: relative;
 }
 
 .message {
   position: relative;
-  top: 20vh;
+  top: 0.8vh;
   text-align: center;
 
   margin: 0;
   padding: 0;
-  font-size: 1.5rem;
+  font-size: 1.15rem;
   font-weight: 600;
-  color: red;
+  color: rgba(253, 46, 129, 0.826);
 }
 
 .Block {
+  position: relative;
+  top: 14vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Buttons {
+  position: relative;
+  top: 2vh;
+  left: 1vh;
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }

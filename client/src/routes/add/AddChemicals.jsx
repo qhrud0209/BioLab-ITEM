@@ -1,30 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import ImageData from "../../assets/image/replaceIMG.png";
 
 import MainLogo from "../../components/MainLogo";
 
 function AddChemicals() {
+  var temp = ImageData.split(",")[1];
+  var imageData = atob(temp);
+
   const [chemicalName, setChemicalName] = useState("");
   const [chmicalLocation, setChemicalLocation] = useState("");
   const [chemicalCaution, setChemicalCaution] = useState("");
-  const [chemicalImage, setChemicalImage] = useState(ImageData);
+  const [chemicalImage, setChemicalImage] = useState(imageData);
   const [chemicalDate, setChemicalDate] = useState("");
   const [chemicalQuantity, setChemicalQuantity] = useState();
 
   const onChangeImage = (e) => {
     const file = e.target.files[0];
+
     const reader = new FileReader();
     reader.onloadend = () => {
-      //console.log("Encoded Base 64 File String:", reader.result);
+      console.log("Encoded Base 64 File String:", reader.result);
       var data = reader.result.split(",")[1];
       var binaryBlob = atob(data);
-      //console.log("Encoded Binary File String:", binaryBlob);
+      console.log("Encoded Binary File String:", binaryBlob);
 
       setChemicalImage(binaryBlob);
       var convertBase64 = btoa(binaryBlob);
 
-      //console.log("Decoded Base 64 File String:", convertBase64);
+      console.log("Decoded Base 64 File String:", convertBase64);
 
       //console.log("img" + img);
     };
